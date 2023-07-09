@@ -45,8 +45,7 @@ public:
     template <concepts::Deserializable T>
     static T deserialize(Ref<DeserializerStream> r_stream);
 
-    template <class T>
-    requires concepts::Deserializable<T,TTag>
+    template <concepts::Deserializable<TTag> T>
     static void deserialize(Ref<DeserializerStream> r_stream,
                             Ptr<T> begin,
                             Size numberOfItems);

@@ -24,15 +24,6 @@ jobs:
         sanitizer: [ADDRESS, THREAD, UB]
     runs-on: ubuntu-latest
     steps:
-      - name: Install toolchain
-        run: |
-          sudo apt install gcc-12 g++-12
-          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 20
-          sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 20
-          sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30
-          sudo update-alternatives --set cc /usr/bin/gcc
-          sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30
-          sudo update-alternatives --set c++ /usr/bin/g++
       - name: Clone repository
         uses: actions/checkout@v3
         with:
@@ -40,14 +31,12 @@ jobs:
       - name: Install packages
         run: sudo xargs apt install < dependencies_ubuntu.txt
       - name: Build
-        run: |
-          sudo update-alternatives --set gcc "/usr/bin/gcc-12"
-          sudo update-alternatives --set g++ "/usr/bin/g++-12"
-          ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER=ON"
+        run: ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER=ON"
       - name: Run tests
         run: ./build/bin/cieutils_testrunner
 
   generate-docs:
+    needs: testrunner
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
