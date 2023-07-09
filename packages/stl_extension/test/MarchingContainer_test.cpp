@@ -24,7 +24,7 @@ CIE_TEST_CASE( "MarchingContainer", "[stl_extension]" )
             ValueType counter = 0;
             CIE_TEST_CHECK_NOTHROW( container.push_back( ++counter ) );
             CIE_TEST_CHECK_NOTHROW( container.emplace_back( ++counter ) );
-            
+
             CIE_TEST_CHECK_NOTHROW( container.back() );
             CIE_TEST_CHECK( container.back() == counter );
 
@@ -50,14 +50,14 @@ CIE_TEST_CASE( "MarchingContainer", "[stl_extension]" )
             CIE_TEST_CHECK_NOTHROW( container[ container.size() - 1 ] );
             CIE_TEST_CHECK( container[ container.size()-1 ] == container.back() );
 
-            #ifdef CIE_ENABLE_OUT_OF_RANGE_TESTS
+            #ifdef CIE_ENABLE_OUT_OF_RANGE_CHECKS
             CIE_TEST_CHECK_THROWS( container[container.size()] );
             #endif
 
             for ( Size i=0; i<3*capacity; ++i )
                 CIE_TEST_CHECK_NOTHROW( container.push_back( ValueType(++counter) ) );
 
-            #ifdef CIE_ENABLE_OUT_OF_RANGE_TESTS
+            #ifdef CIE_ENABLE_OUT_OF_RANGE_CHECKS
             CIE_TEST_CHECK_THROWS( container[ container.size() - capacity - 1 ] );
             #endif
 
@@ -70,7 +70,7 @@ CIE_TEST_CASE( "MarchingContainer", "[stl_extension]" )
 
             CIE_TEST_CHECK( container.back() == counter );
 
-            #ifdef CIE_ENABLE_OUT_OF_RANGE_TESTS
+            #ifdef CIE_ENABLE_OUT_OF_RANGE_CHECKS
             CIE_TEST_CHECK_THROWS( container[container.size()] );
             #endif
         }
@@ -80,7 +80,7 @@ CIE_TEST_CASE( "MarchingContainer", "[stl_extension]" )
             ContainerType container( capacity, initializer );
 
             CIE_TEST_CHECK( container.size() == capacity );
-            
+
             for ( Size i=0; i<capacity; ++i )
             {
                 CIE_TEST_CHECK_NOTHROW( container[i] );

@@ -30,7 +30,7 @@
     }
 
 
-#ifdef CIE_ENABLE_OUT_OF_RANGE_TESTS
+#ifdef CIE_ENABLE_OUT_OF_RANGE_CHECKS
     #define CIE_DETAIL_GET_OUT_OF_RANGE_MACRO(_1, _2, MACRO_NAME, ...) MACRO_NAME
 
     #define CIE_DETAIL_OUT_OF_RANGE_CHECK_DEFAULT_MESSAGE(BOOL_EXPRESSION) \
@@ -69,22 +69,6 @@
         }
 #else
     #define CIE_DIVISION_BY_ZERO_CHECK(BOOL_EXPRESSION) {}
-#endif
-
-
-#ifdef CIE_ENABLE_RUNTIME_GEOMETRY_CHECKS
-    #define CIE_RUNTIME_GEOMETRY_CHECK(BOOL_EXPRESSION, MESSAGE) \
-        if (!(BOOL_EXPRESSION)) [[unlikely]]                     \
-        {                                                        \
-            std::stringstream stream;                            \
-            stream << #BOOL_EXPRESSION;                          \
-            stream << " (";                                      \
-            stream << MESSAGE;                                   \
-            stream << ")";                                       \
-            CIE_THROW(cie::GeometryException, stream.str());     \
-        }
-#else
-    #define CIE_RUNTIME_GEOMETRY_CHECK(BOOL_EXPRESSION, MESSAGE)
 #endif
 
 

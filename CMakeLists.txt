@@ -11,6 +11,12 @@ set(${PROJECT_NAME_UPPER}_BUILD_SHARED_LIBRARY ON CACHE BOOL "build shared libra
 set(${PROJECT_NAME_UPPER}_BUILD_PYTHON_MODULE ON CACHE BOOL "build python bindings for ${PROJECT_NAME}")
 set(${PROJECT_NAME_UPPER}_BUILD_TESTS OFF CACHE BOOL "build testrunner for ${PROJECT_NAME}")
 set(${PROJECT_NAME_UPPER}_ENABLE_MPI OFF CACHE BOOL "Build with MPI support")
+set(${PROJECT_NAME_UPPER}_ENABLE_PROFILING OFF CACHE BOOL "Enable profiling macros.")
+set(${PROJECT_NAME_UPPER}_ENABLE_OUT_OF_RANGE_CHECKS OFF CACHE BOOL "Enable macros for checking out-of-range errors.")
+set(${PROJECT_NAME_UPPER}_ENABLE_DIVISION_BY_ZERO_CHECKS OFF CACHE BOOL "Enable macros for checking division by zero errors.")
+set(${PROJECT_NAME_UPPER}_ENABLE_ADDRESS_SANITIZER OFF CACHE BOOL "Compile with address sanitizer.")
+set(${PROJECT_NAME_UPPER}_ENABLE_THREAD_SANITIZER OFF CACHE BOOL "Compile with thread sanitizer.")
+set(${PROJECT_NAME_UPPER}_ENABLE_UB_SANITIZER OFF CACHE BOOL "Compile with undefined behaviour sanitizer.")
 
 # Static paths
 if(UNIX)
@@ -65,6 +71,34 @@ foreach(source_template ${source_templates})
          "${CMAKE_CURRENT_SOURCE_DIR}/src/${source_template_name}.cpp"
          FILE_PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)
 endforeach()
+
+# Compile definitions
+if(${PROJECT_NAME_UPPER}_ENABLE_PROFILING)
+    add_compile_definitions(CIE_ENABLE_PROFILING=1)
+endif()
+
+if(${PROJECT_NAME_UPPER}_ENABLE_OUT_OF_RANGE_CHECKS)
+    add_compile_definitions(CIE_ENABLE_OUT_OF_RANGE_CHECKS=1)
+endif()
+
+if(${PROJECT_NAME_UPPER}_ENABLE_DIVISION_BY_ZERO_CHECKS)
+    add_compile_definitions(CIE_ENABLE_DIVISION_BY_ZERO_CHECKS=1)
+endif()
+
+if(${PROJECT_NAME_UPPER}_ENABLE_ADDRESS_SANITIZER)
+    add_compile_options("-fsanitize=address")
+    add_link_options("-fsanitize=address")
+endif()
+
+if(${PROJECT_NAME_UPPER}_ENABLE_THREAD_SANITIZER)
+    add_compile_options("-fsanitize=thread")
+    add_link_options("-fsanitize=thread")
+endif()
+
+if(${PROJECT_NAME_UPPER}_ENABLE_UB_SANITIZER)
+    add_compile_options("-fsanitize=undefined")
+    add_link_options("-fsanitize=undefined")
+endif()
 
 # Build main library
 file(GLOB_RECURSE sources "${CMAKE_CURRENT_SOURCE_DIR}/packages/*/src/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
