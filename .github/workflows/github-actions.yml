@@ -24,12 +24,12 @@ jobs:
         sanitizer: [ADDRESS, THREAD, UB]
     runs-on: ubuntu-latest
     steps:
-      - name: Install packages
-        run: sudo xargs apt install < dependencies_ubuntu.txt
       - name: Clone repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: Install packages
+        run: sudo xargs apt install < dependencies_ubuntu.txt
       - name: Build
         run: ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER"
       - name: Run tests
@@ -58,7 +58,7 @@ jobs:
         run: echo "<meta http-equiv=\"refresh\" content=\"0; docs/html/index.html\">" > index.html
       - name: Update remote
         run: |
-          git add index.html doxy/html -f
+          git add index.html docs/html -f
           git commit -m "update docs"
           git push -f https://$USER_NAME:$GITHUB_TOKEN@github.com/matekelemen/CiE.git doc
         env:
