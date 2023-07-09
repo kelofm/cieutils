@@ -13,6 +13,7 @@
 namespace cie {
 
 
+/// @todo incomplete, tests fail - fixme
 template <unsigned short Dim, concepts::UnsignedInteger TValue = Size>
 class HierarchicalInteger
 {
