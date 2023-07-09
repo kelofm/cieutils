@@ -31,7 +31,7 @@ jobs:
       - name: Install packages
         run: sudo xargs apt install < dependencies_ubuntu.txt
       - name: Build
-        run: ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER"
+        run: ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER=ON"
       - name: Run tests
         run: ./build/bin/cieutils_testrunner
 
@@ -60,7 +60,7 @@ jobs:
         run: |
           git add index.html docs/html -f
           git commit -m "update docs"
-          git push -f https://$USER_NAME:$GITHUB_TOKEN@github.com/matekelemen/CiE.git doc
+          git push -f https://$USER_NAME:$GITHUB_TOKEN@github.com/kelofm/cieutils.git doc
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           USER_NAME: matekelemen
