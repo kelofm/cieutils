@@ -26,8 +26,6 @@ jobs:
     steps:
       - name: Install toolchain
         run: |
-          sudo update-alternatives --remove-all gcc
-          sudo update-alternatives --remove-all g++
           sudo apt install gcc-12 g++-12
           sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 20
           sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 20
