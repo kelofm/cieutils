@@ -65,16 +65,6 @@ inline void Serializer<TTag>::deserialize(Ref<DeserializerStream> r_stream, Ref<
 
 
 template <concepts::AnyOf<tags::Binary,tags::Text> TTag>
-template <concepts::Deserializable T>
-inline T Serializer<TTag>::deserialize(Ref<DeserializerStream> r_stream)
-{
-    T output;
-    Serializer::deserialize(r_stream, output);
-    return output;
-}
-
-
-template <concepts::AnyOf<tags::Binary,tags::Text> TTag>
 template <concepts::Deserializable<TTag> T>
 inline void Serializer<TTag>::deserialize(Ref<DeserializerStream> r_stream,
                                           Ptr<T> begin,

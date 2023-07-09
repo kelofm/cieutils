@@ -42,9 +42,6 @@ public:
     template <concepts::NonTriviallyDeserializable T>
     static void deserialize(Ref<DeserializerStream> r_stream, Ref<T> r_output);
 
-    template <concepts::Deserializable T>
-    static T deserialize(Ref<DeserializerStream> r_stream);
-
     template <concepts::Deserializable<TTag> T>
     static void deserialize(Ref<DeserializerStream> r_stream,
                             Ptr<T> begin,
