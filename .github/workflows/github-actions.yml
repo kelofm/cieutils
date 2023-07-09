@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - "*.md"
+      - "*.html"
+      - "docs/*"
+      - "*.gitignore"
+      - "license"
+      - "readme"
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  testrunner:
+    strategy:
+      matrix:
+        sanitizer: [ADDRESS, THREAD, UB]
+    runs-on: ubuntu-latest
+    steps:
+      -name: Install packages
+        run: sudo xargs apt install < dependencies_ubuntu.txt
+      -name: Clone repository
+        uses: actions/checkout@v3
+        with: fetch-depth: 0
+      -name: Build
+        run: ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER"
+      -name: Run tests
+        run: ./build/bin/cieutils_testrunner
+
+  generate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      -name: Clone repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      -name: Install packages
+        run: sudo apt install findutils doxygen graphviz && sudo xargs apt install < dependencies_ubuntu.txt
+      -name: Update doc branch with current master
+        run: |
+          git config --local user.name $USER_NAME
+          git config --local user.email "in@valid.email"
+          git branch -D doc &>/dev/null || true
+          git checkout -b doc
+        env:
+          USER_NAME: matekelemen
+      -name: Generate docs
+        run: cd docs && doxygen doxyfile && cd ..
+      -name: Generate root index.html
+        run: echo "<meta http-equiv=\"refresh\" content=\"0; docs/html/index.html\">" > index.html
+      -name: Update remote
+        run: |
+          git add index.html doxy/html -f
+          git commit -m "update docs"
+          git push -f https://$USER_NAME:$GITHUB_TOKEN@github.com/matekelemen/CiE.git doc
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          USER_NAME: matekelemen
