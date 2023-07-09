@@ -64,8 +64,8 @@ Profiler<T>::Profiler(std::filesystem::path&& r_outputPath)
     const auto numberOfThreads = std::thread::hardware_concurrency();
     std::vector<std::thread> threads;
     threads.reserve(numberOfThreads);
-    std::atomic<int> threadCounter = 0;
-    for (int i_thread=0; i_thread<numberOfThreads; ++i_thread) {
+    std::atomic<unsigned> threadCounter = 0;
+    for (unsigned i_thread=0; i_thread<numberOfThreads; ++i_thread) {
         threads.emplace_back([i_thread, &threadCounter, this](){
             while (threadCounter < i_thread) {} // <== wait until the previous thread finishes
             _itemContainerMap.emplace(std::this_thread::get_id(), std::list<Item> {});

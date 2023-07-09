@@ -8,6 +8,7 @@
 
 // --- STL Includes ---
 #include <sstream>
+#include <string>
 #include <cassert>
 
 // Assertion message
@@ -15,7 +16,7 @@
 
 // Static assertion
 #define CIE_ASSERT(boolExpression,message)                                  \
-    assert( (boolExpression) && message != "0" );
+    assert( (boolExpression) && message != std::string {"0"} );
 
 // Static assertion
 #define CIE_STATIC_ASSERT(boolExpression)                                   \

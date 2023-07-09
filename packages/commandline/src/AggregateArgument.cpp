@@ -200,33 +200,28 @@ AggregateArgument<TArgument>::parseValues(const ArgParse::ValueViewContainer& r_
 {
     CIE_BEGIN_EXCEPTION_TRACING
 
-    if (0 <= int(_nArgs))
-    {
+    const int nArgs = int(_nArgs);
+    if (0 <= nArgs) {
         CIE_CHECK(
-            r_values.size() == int(_nArgs),
+            r_values.size() == static_cast<Size>(nArgs),
             "'" << this->name() << "' expected " << int(_nArgs) << " arguments, but got " << r_values.size()
         )
 
         auto it_value = r_values.begin();
-        for (Size index=0; index<int(_nArgs); ++index, ++it_value)
+        for (Size index=0; index<static_cast<Size>(nArgs); ++index, ++it_value)
             parseOne(*it_value, r_outputMap, _validator, this->name());
-    }
-    else if (_nArgs == ArgParse::ArgumentCount::NonZero)
-    {
+    } else if (_nArgs == ArgParse::ArgumentCount::NonZero) {
         CIE_CHECK(
-            0 < r_values.size(),
+            0ul < r_values.size(),
             "'" + this->name() + "' expected at least 1 argument, but got " + std::to_string(r_values.size())
         )
 
         for (const auto& r_value : r_values)
             parseOne(r_value, r_outputMap, _validator, this->name());
-    }
-    else if (_nArgs == ArgParse::ArgumentCount::Any)
-    {
+    } else if (_nArgs == ArgParse::ArgumentCount::Any) {
         for (const auto& r_value : r_values)
             parseOne(r_value, r_outputMap, _validator, this->name());
-    }
-    else
+    } else
         CIE_THROW(Exception, "Unhandled argument count " + std::to_string(int(_nArgs)))
 
     CIE_END_EXCEPTION_TRACING

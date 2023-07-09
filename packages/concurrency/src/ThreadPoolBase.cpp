@@ -25,9 +25,8 @@ ThreadPoolBase::ThreadPoolBase(Size size) :
 
     // Limit max number of threads if the environment defines OMP_NUM_THREADS
     const auto p_ompNumThreads = std::getenv("OMP_NUM_THREADS");
-    if (p_ompNumThreads)
-    {
-        const auto ompNumThreads = std::strtol(p_ompNumThreads, NULL, 10);
+    if (p_ompNumThreads) {
+        const Size ompNumThreads = std::strtoul(p_ompNumThreads, NULL, 10);
         if (ompNumThreads < 1)
             CIE_THROW(Exception, "Invalid OMP_NUM_THREADS (" + std::to_string(ompNumThreads) + ")")
 

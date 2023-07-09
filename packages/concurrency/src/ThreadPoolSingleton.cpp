@@ -24,19 +24,8 @@ Ref<ThreadPoolBase> ThreadPoolSingleton::getBase()
 
 void ThreadPoolSingleton::shutDown()
 {
-    if (_p_pool) [[likely]]
-    {
-        const auto& r_threads = _p_pool.value()->threads();
-        //CIE_CHECK(
-        //    std::find_if(
-        //        r_threads.begin(),
-        //        r_threads.end(),
-        //        [](const auto& r_thread) {return r_thread.get_id() == std::this_thread::get_id();}
-        //    ) != r_threads.end(),
-        //    "ThreadPoolSingleton::shutDown must be called from the master thread"
-        //)
-
-        _p_pool.reset();
+    if (_p_pool) [[likely]] {
+         _p_pool.reset();
     }
 }
 
