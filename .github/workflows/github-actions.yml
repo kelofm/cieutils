@@ -24,26 +24,27 @@ jobs:
         sanitizer: [ADDRESS, THREAD, UB]
     runs-on: ubuntu-latest
     steps:
-      -name: Install packages
+      - name: Install packages
         run: sudo xargs apt install < dependencies_ubuntu.txt
-      -name: Clone repository
+      - name: Clone repository
         uses: actions/checkout@v3
-        with: fetch-depth: 0
-      -name: Build
+        with:
+          fetch-depth: 0
+      - name: Build
         run: ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER"
-      -name: Run tests
+      - name: Run tests
         run: ./build/bin/cieutils_testrunner
 
   generate-docs:
     runs-on: ubuntu-latest
     steps:
-      -name: Clone repository
+      - name: Clone repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      -name: Install packages
+      - name: Install packages
         run: sudo apt install findutils doxygen graphviz && sudo xargs apt install < dependencies_ubuntu.txt
-      -name: Update doc branch with current master
+      - name: Update doc branch with current master
         run: |
           git config --local user.name $USER_NAME
           git config --local user.email "in@valid.email"
@@ -51,11 +52,11 @@ jobs:
           git checkout -b doc
         env:
           USER_NAME: matekelemen
-      -name: Generate docs
+      - name: Generate docs
         run: cd docs && doxygen doxyfile && cd ..
-      -name: Generate root index.html
+      - name: Generate root index.html
         run: echo "<meta http-equiv=\"refresh\" content=\"0; docs/html/index.html\">" > index.html
-      -name: Update remote
+      - name: Update remote
         run: |
           git add index.html doxy/html -f
           git commit -m "update docs"
