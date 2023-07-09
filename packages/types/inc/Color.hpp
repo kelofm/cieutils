@@ -82,13 +82,13 @@ public:
 
     using Color::operator=;
 
-    const ValueType getRed() const;
+    ValueType getRed() const;
 
-    const ValueType getGreen() const;
+    ValueType getGreen() const;
 
-    const ValueType getBlue() const;
+    ValueType getBlue() const;
 
-    const ValueType getAlpha() const;
+    ValueType getAlpha() const;
 
     void setRed(ValueType value);
 

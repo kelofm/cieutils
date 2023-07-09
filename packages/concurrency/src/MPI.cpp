@@ -14,7 +14,7 @@
 namespace cie::mpi {
 
 
-MPI::MPI(Ptr<MPI_Comm> p_comm, MPIKey key)
+MPI::MPI(Ptr<MPI_Comm> p_comm, MPIKey)
 {
     #ifdef CIEUTILS_COMPILE_MPI
     if (p_comm) {

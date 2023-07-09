@@ -118,7 +118,7 @@ private:
         virtual int overflow(int dummy) override
         {return dummy;}
 
-        virtual std::streamsize xsputn(const char* p_message, std::streamsize messageSize) override
+        virtual std::streamsize xsputn(const char*, std::streamsize messageSize) override
         {return messageSize;}
     };
 

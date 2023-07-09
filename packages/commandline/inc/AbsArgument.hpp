@@ -30,7 +30,7 @@ public:
 
     AbsArgument(const ArgParse::Key& r_key);
 
-    CIE_DEFINE_CLASS_DEFAULTS(AbsArgument);
+    CIE_DEFINE_CLASS_DEFAULTS(AbsArgument)
 
     virtual ~AbsArgument() = default;
 

@@ -30,19 +30,19 @@ public:
 
     ~ConstructorTracker();
 
-    static const Size numberOfActiveInstances();
+    static Size numberOfActiveInstances();
 
-    static const Size numberOfDefaultConstructorCalls();
+    static Size numberOfDefaultConstructorCalls();
 
-    static const Size numberOfMoveConstructorCalls();
+    static Size numberOfMoveConstructorCalls();
 
-    static const Size numberOfCopyConstructorCalls();
+    static Size numberOfCopyConstructorCalls();
 
-    static const Size numberOfMoveAssignmentCalls();
+    static Size numberOfMoveAssignmentCalls();
 
-    static const Size numberOfCopyAssignmentCalls();
+    static Size numberOfCopyAssignmentCalls();
 
-    static const Size numberOfDestructorCalls();
+    static Size numberOfDestructorCalls();
 
     static void reset();
 

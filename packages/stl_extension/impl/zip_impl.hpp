@@ -23,7 +23,7 @@ ZipIterator<TContainers...>::makeRefTuple()
 template <class ...TContainers>
 template <class TValue, std::size_t ...Indices>
 inline TValue
-ZipIterator<TContainers...>::makeRefTupleImpl(std::index_sequence<Indices...> sequence)
+ZipIterator<TContainers...>::makeRefTupleImpl(std::index_sequence<Indices...>)
 {
     return TValue(*std::get<Indices>(_it)...);
 }
@@ -32,7 +32,7 @@ ZipIterator<TContainers...>::makeRefTupleImpl(std::index_sequence<Indices...> se
 template <class ...TContainers>
 template <std::size_t ...Indices>
 inline typename ZipObject<TContainers...>::Iterator
-ZipObject<TContainers...>::beginImpl(std::index_sequence<Indices...> sequence)
+ZipObject<TContainers...>::beginImpl(std::index_sequence<Indices...>)
 {
     using Iterator = typename ZipObject<TContainers...>::Iterator;
     return Iterator(
@@ -44,7 +44,7 @@ ZipObject<TContainers...>::beginImpl(std::index_sequence<Indices...> sequence)
 template <class ...TContainers>
 template <std::size_t ...Indices>
 inline typename ZipObject<TContainers...>::Iterator
-ZipObject<TContainers...>::endImpl(std::index_sequence<Indices...> sequence)
+ZipObject<TContainers...>::endImpl(std::index_sequence<Indices...>)
 {
     auto it = this->begin();
     it += _size;

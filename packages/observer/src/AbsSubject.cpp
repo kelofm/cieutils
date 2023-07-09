@@ -10,18 +10,14 @@
 namespace cie::utils::observer {
 
 
-Subject::Subject( const SubjectPtr& copy )
+Subject::Subject(const SubjectPtr&)
 {
 }
 
 
-SubjectPtr Subject::operator=( const SubjectPtr& copy )
+SubjectPtr Subject::operator=(const SubjectPtr&)
 {
-    CIE_BEGIN_EXCEPTION_TRACING
-
     return shared_from_this();
-
-    CIE_END_EXCEPTION_TRACING
 }
 
 
@@ -54,7 +50,7 @@ int Subject::attachObserver( ObserverPtr observer )
         _observers.push_back(observer);
         id = _observers.size()-1;
     }
-    
+
     return id;
 
     CIE_END_EXCEPTION_TRACING
@@ -89,7 +85,7 @@ int Subject::observerID( ObserverPtr observer )
             id = (int)i;
             break;
         }
-    
+
     return id;
 
     CIE_END_EXCEPTION_TRACING

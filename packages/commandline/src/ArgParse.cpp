@@ -62,7 +62,7 @@ ArgParse::Results::Results(const Map& r_map)
 }
 
 
-const ArgParse::Validator ArgParse::defaultValidator = [](const auto& r_value){return true;};
+const ArgParse::Validator ArgParse::defaultValidator = [](const auto&){return true;};
 
 
 const ArgParse::Validator ArgParse::pathValidator = [](const auto& r_value)

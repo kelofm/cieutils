@@ -22,7 +22,7 @@ void addBindings<Version>(Ref<pybind11::module_> r_module)
         .def(pybind11::self == pybind11::self)
         .def(pybind11::self != pybind11::self)
         .def(pybind11::self < pybind11::self)
-        .def_property_static("local", [](pybind11::object) {return cie::Version::local;}, [](cie::Version version) {})
+        .def_property_static("local", [](pybind11::object) {return cie::Version::local;}, [](cie::Version) {})
         ;
 }
 

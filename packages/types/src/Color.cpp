@@ -140,25 +140,25 @@ OutputStream& operator<<(OutputStream& r_stream, const Color& r_color)
 }
 
 
-const RGBAColor::ValueType RGBAColor::getRed() const
+RGBAColor::ValueType RGBAColor::getRed() const
 {
     return this->get<0>();
 }
 
 
-const RGBAColor::ValueType RGBAColor::getGreen() const
+RGBAColor::ValueType RGBAColor::getGreen() const
 {
     return this->get<1>();
 }
 
 
-const RGBAColor::ValueType RGBAColor::getBlue() const
+RGBAColor::ValueType RGBAColor::getBlue() const
 {
     return this->get<2>();
 }
 
 
-const RGBAColor::ValueType RGBAColor::getAlpha() const
+RGBAColor::ValueType RGBAColor::getAlpha() const
 {
     return this->get<3>();
 }

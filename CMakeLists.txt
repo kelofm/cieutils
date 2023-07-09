@@ -100,6 +100,8 @@ if(${PROJECT_NAME_UPPER}_ENABLE_UB_SANITIZER)
     add_link_options("-fsanitize=undefined")
 endif()
 
+add_compile_options(-Wall -Wpedantic -Wextra -Werror)
+
 # Build main library
 file(GLOB_RECURSE sources "${CMAKE_CURRENT_SOURCE_DIR}/packages/*/src/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 if (${${PROJECT_NAME_UPPER}_BUILD_SHARED_LIBRARY} OR ${${PROJECT_NAME_UPPER}_BUILD_PYTHON_MODULE})

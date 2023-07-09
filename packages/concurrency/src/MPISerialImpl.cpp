@@ -15,13 +15,13 @@ MPISerialImpl::MPISerialImpl() noexcept
 }
 
 
-void MPISerialImpl::send(Out message, RankID destination, MessageTag tag)
+void MPISerialImpl::send(Out, RankID, MessageTag)
 {
     CIE_THROW(Exception, "Attempted send operation on serial MPI")
 }
 
 
-void MPISerialImpl::receive(In message, RankID source, MessageTag tag)
+void MPISerialImpl::receive(In, RankID, MessageTag)
 {
     CIE_THROW(Exception, "Attempted receive operation on serial MPI")
 }
@@ -44,7 +44,7 @@ void MPISerialImpl::sendAndReceive(Out send,
 }
 
 
-void MPISerialImpl::broadcast(In message,
+void MPISerialImpl::broadcast(In,
                               RankID source,
                               MessageTag tag)
 {

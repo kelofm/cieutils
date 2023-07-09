@@ -43,7 +43,7 @@ ConstructorTracker<Tag>::ConstructorTracker()
 
 
 template <class Tag>
-ConstructorTracker<Tag>::ConstructorTracker(ConstructorTracker&& r_rhs)
+ConstructorTracker<Tag>::ConstructorTracker(ConstructorTracker&&)
 {
     std::scoped_lock<std::mutex> lock(_mutex);
     ConstructorTracker<Tag>::_numberOfMoveConstructorCalls++;
@@ -52,7 +52,7 @@ ConstructorTracker<Tag>::ConstructorTracker(ConstructorTracker&& r_rhs)
 
 
 template <class Tag>
-ConstructorTracker<Tag>::ConstructorTracker(const ConstructorTracker& r_rhs)
+ConstructorTracker<Tag>::ConstructorTracker(const ConstructorTracker&)
 {
     std::scoped_lock<std::mutex> lock(_mutex);
     ConstructorTracker<Tag>::_numberOfCopyConstructorCalls++;
@@ -61,7 +61,7 @@ ConstructorTracker<Tag>::ConstructorTracker(const ConstructorTracker& r_rhs)
 
 
 template <class Tag>
-ConstructorTracker<Tag>& ConstructorTracker<Tag>::operator=(ConstructorTracker&& r_rhs)
+ConstructorTracker<Tag>& ConstructorTracker<Tag>::operator=(ConstructorTracker&&)
 {
     std::scoped_lock<std::mutex> lock(_mutex);
     ConstructorTracker<Tag>::_numberOfMoveAssignmentCalls++;
@@ -70,7 +70,7 @@ ConstructorTracker<Tag>& ConstructorTracker<Tag>::operator=(ConstructorTracker&&
 
 
 template <class Tag>
-ConstructorTracker<Tag>& ConstructorTracker<Tag>::operator=(const ConstructorTracker& r_rhs)
+ConstructorTracker<Tag>& ConstructorTracker<Tag>::operator=(const ConstructorTracker&)
 {
     std::scoped_lock<std::mutex> lock(_mutex);
     ConstructorTracker<Tag>::_numberOfCopyAssignmentCalls++;
@@ -88,7 +88,7 @@ ConstructorTracker<Tag>::~ConstructorTracker()
 
 
 template <class Tag>
-const Size ConstructorTracker<Tag>::numberOfActiveInstances()
+Size ConstructorTracker<Tag>::numberOfActiveInstances()
 {
     std::scoped_lock<std::mutex> lock(_mutex);
     return ConstructorTracker<Tag>::_numberOfActiveInstances;
@@ -96,7 +96,7 @@ const Size ConstructorTracker<Tag>::numberOfActiveInstances()
 
 
 template <class Tag>
-const Size ConstructorTracker<Tag>::numberOfDefaultConstructorCalls()
+Size ConstructorTracker<Tag>::numberOfDefaultConstructorCalls()
 {
     std::scoped_lock<std::mutex> lock(_mutex);
     return ConstructorTracker<Tag>::_numberOfDefaultConstructorCalls;
@@ -104,7 +104,7 @@ const Size ConstructorTracker<Tag>::numberOfDefaultConstructorCalls()
 
 
 template <class Tag>
-const Size ConstructorTracker<Tag>::numberOfMoveConstructorCalls()
+Size ConstructorTracker<Tag>::numberOfMoveConstructorCalls()
 {
     std::scoped_lock<std::mutex> lock(_mutex);
     return ConstructorTracker<Tag>::_numberOfMoveConstructorCalls;
@@ -112,7 +112,7 @@ const Size ConstructorTracker<Tag>::numberOfMoveConstructorCalls()
 
 
 template <class Tag>
-const Size ConstructorTracker<Tag>::numberOfCopyConstructorCalls()
+Size ConstructorTracker<Tag>::numberOfCopyConstructorCalls()
 {
     std::scoped_lock<std::mutex> lock(_mutex);
     return ConstructorTracker<Tag>::_numberOfCopyConstructorCalls;
@@ -120,7 +120,7 @@ const Size ConstructorTracker<Tag>::numberOfCopyConstructorCalls()
 
 
 template <class Tag>
-const Size ConstructorTracker<Tag>::numberOfMoveAssignmentCalls()
+Size ConstructorTracker<Tag>::numberOfMoveAssignmentCalls()
 {
     std::scoped_lock<std::mutex> lock(_mutex);
     return ConstructorTracker<Tag>::_numberOfMoveAssignmentCalls;
@@ -128,7 +128,7 @@ const Size ConstructorTracker<Tag>::numberOfMoveAssignmentCalls()
 
 
 template <class Tag>
-const Size ConstructorTracker<Tag>::numberOfCopyAssignmentCalls()
+Size ConstructorTracker<Tag>::numberOfCopyAssignmentCalls()
 {
     std::scoped_lock<std::mutex> lock(_mutex);
     return ConstructorTracker<Tag>::_numberOfCopyAssignmentCalls;
@@ -136,7 +136,7 @@ const Size ConstructorTracker<Tag>::numberOfCopyAssignmentCalls()
 
 
 template <class Tag>
-const Size ConstructorTracker<Tag>::numberOfDestructorCalls()
+Size ConstructorTracker<Tag>::numberOfDestructorCalls()
 {
     std::scoped_lock<std::mutex> lock(_mutex);
     return ConstructorTracker<Tag>::_numberOfDestructorCalls;

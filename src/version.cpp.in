@@ -36,14 +36,14 @@ Version::operator std::string () const
 }
 
 
-Bool operator<(Ref<const Version> r_lhs, Ref<const Version> r_rhs)
+Bool operator<(Ref<const Version>, Ref<const Version>)
 {
     CIE_THROW(NotImplementedException, "Need to access git commands");
     return false;
 }
 
 
-Bool operator==(Ref<const Version> r_lhs, Ref<const Version> r_rhs)
+Bool operator==(Ref<const Version>, Ref<const Version>)
 {
     CIE_THROW(NotImplementedException, "Need to access git commands");
     return false;

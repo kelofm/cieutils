@@ -7,13 +7,13 @@
 namespace cie::utils::detail {
 
 
-bool PositionalArgument::matchesKey(const ArgParse::KeyView& r_key) const
+bool PositionalArgument::matchesKey(const ArgParse::KeyView&) const
 {
     return false;
 }
 
 
-bool PositionalArgument::matchesKey(const ArgParse::ValueView& r_key) const
+bool PositionalArgument::matchesKey(const ArgParse::ValueView&) const
 {
     return false;
 }

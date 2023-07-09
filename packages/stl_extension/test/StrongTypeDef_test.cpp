@@ -39,25 +39,25 @@ struct TestClass
     CIE_STRONG_TYPEDEF(STDVectorBase,MemberSTDVector)
 };
 
-int testFunction( VectorBase value )                { return 0; }
-int testFunction( SubVector1 value )                { return 1; }
-int testFunction( SubVector2 value )                { return 2; }
-int testFunction( TestClass::MemberVector value )   { return 3; }
+int testFunction(VectorBase)                {return 0;}
+int testFunction(SubVector1)                {return 1;}
+int testFunction(SubVector2)                {return 2;}
+int testFunction(TestClass::MemberVector)   {return 3;}
 
-int testFunction( IntBase value )                   { return 4; }
-int testFunction( SubInt1 value )                   { return 5; }
-int testFunction( SubInt2 value )                   { return 6; }
-int testFunction( TestClass::MemberInt value )      { return 7; }
+int testFunction(IntBase)                   {return 4;}
+int testFunction(SubInt1)                   {return 5;}
+int testFunction(SubInt2)                   {return 6;}
+int testFunction(TestClass::MemberInt)      {return 7;}
 
-int testFunction( PtrBase value )               { return 8; }
-int testFunction( SubPtr1 value )               { return 9; }
-int testFunction( SubPtr2 value )               { return 10; }
-int testFunction( TestClass::MemberPtr value )  { return 11; }
+int testFunction(PtrBase)                   {return 8;}
+int testFunction(SubPtr1)                   {return 9;}
+int testFunction(SubPtr2)                   {return 10;}
+int testFunction(TestClass::MemberPtr)      {return 11;}
 
-int testFunction(STDVectorBase value)               {return 12;}
-int testFunction(SubSTDVector1 value)               {return 13;}
-int testFunction(SubSTDVector2 value)               {return 14;}
-int testFunction(TestClass::MemberSTDVector value)  {return 15;}
+int testFunction(STDVectorBase)              {return 12;}
+int testFunction(SubSTDVector1)              {return 13;}
+int testFunction(SubSTDVector2)              {return 14;}
+int testFunction(TestClass::MemberSTDVector) {return 15;}
 
 
 template <class T, class TT>
@@ -73,14 +73,14 @@ concept NotConvertibleTo
 = !ConvertibleTo<T,TT>;
 
 template <class T, class TT>
-bool convertibleTo( T a, TT b )
+bool convertibleTo(T, TT)
 requires ConvertibleTo<T,TT>
 {
     return true;
 }
 
 template <class T, class TT>
-bool convertibleTo( T a, TT b )
+bool convertibleTo(T, TT)
 requires NotConvertibleTo<T,TT>
 {
     return false;
@@ -172,7 +172,7 @@ CIE_TEST_CASE( "CIE_STRONG_TYPEDEF", "[stl_extension]" )
         CIE_TEST_CHECK( convertibleTo(sub1, base) );
         CIE_TEST_CHECK( !convertibleTo(sub1, sub2) );
     }
-    
+
 } // CIE_TEST_CASE CIE_STRONG_TYPEDEF
 
 

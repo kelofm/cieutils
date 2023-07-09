@@ -9,7 +9,7 @@ namespace cie {
 
 
 template <concepts::CIEException TException>
-TException exceptionFactory(const String& r_location, const String& r_message, const String& r_name) noexcept
+TException exceptionFactory(const String& r_location, const String& r_message, const String&) noexcept
 {return TException(r_location, r_message);}
 
 

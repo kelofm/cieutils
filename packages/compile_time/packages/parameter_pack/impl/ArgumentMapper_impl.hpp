@@ -71,7 +71,7 @@ template <class ...TDefaults>
 template <class TReturn, class TFunction, class ...TSpecified>
 requires Empty<TSpecified...>
 inline TReturn
-ArgumentMapper<TDefaults...>::mapImpl(TFunction&& r_function, std::tuple<TSpecified...>&& r_specified)
+ArgumentMapper<TDefaults...>::mapImpl(TFunction&& r_function, std::tuple<TSpecified...>&&)
 {
     return std::apply(std::forward<TFunction>(r_function), Tuple(_defaults));
 }
