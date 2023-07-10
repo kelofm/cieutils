@@ -78,11 +78,10 @@ struct SerializableTestObject : NonSerializableTestObject
 template <class T>
 void serializeDeserialize(Ref<const T> r_input, Ref<std::stringstream> r_stream)
 {
-    Serializer<tags::Binary> binarySerializer;
-    CIE_TEST_REQUIRE_NOTHROW(binarySerializer.serialize(r_stream, r_input));
+    CIE_TEST_REQUIRE_NOTHROW(Serializer<tags::Binary>::serialize(r_stream, r_input));
 
     T deserialized;
-    binarySerializer.deserialize<T>(r_stream, deserialized);
+    Serializer<tags::Binary>::deserialize<T>(r_stream, deserialized);
     CIE_TEST_CHECK(deserialized == r_input);
 }
 

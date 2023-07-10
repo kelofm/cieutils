@@ -3,6 +3,7 @@
 
 // --- Utility Includes ---
 #include "packages/io/inc/Serializer.hpp"
+#include "packages/io/inc/Traits.hpp"
 #include "packages/macros/inc/checks.hpp"
 
 
@@ -45,22 +46,12 @@ inline void Serializer<TTag>::serialize(Ref<SerializerStream> r_stream,
 
 
 template <>
-template <concepts::TriviallyDeserializable T>
+template <concepts::Deserializable T>
 inline void Serializer<tags::Binary>::deserialize(Ref<DeserializerStream> r_stream, Ref<T> r_output)
 {
     CIE_CHECK(!r_stream.fail(), "Stream in invalid state before trivial deserialization")
     Serializer::deserializeImpl(r_stream, r_output);
     CIE_CHECK(!r_stream.fail(), "Stream in invalid state after trivial deserialization")
-}
-
-
-template <concepts::AnyOf<tags::Binary,tags::Text> TTag>
-template <concepts::NonTriviallyDeserializable T>
-inline void Serializer<TTag>::deserialize(Ref<DeserializerStream> r_stream, Ref<T> r_output)
-{
-    CIE_CHECK(!r_stream.fail(), "Stream in invalid state before deserialization")
-    Serializer::deserializeImpl(r_stream, r_output);
-    CIE_CHECK(!r_stream.fail(), "Stream in invalid state after deserialization")
 }
 
 
@@ -94,19 +85,15 @@ inline void Serializer<TTag>::serializeImpl(Ref<SerializerStream> r_stream, Ref<
 }
 
 
-template <>
-template <concepts::TriviallyDeserializable T>
-inline void Serializer<tags::Binary>::deserializeImpl(Ref<DeserializerStream> r_stream, Ref<T> r_output)
-{
-    r_stream.read(reinterpret_cast<char*>(std::addressof(r_output)), sizeof(T));
-}
-
-
 template <concepts::AnyOf<tags::Binary,tags::Text> TTag>
-template <concepts::NonTriviallyDeserializable T>
+template <concepts::Deserializable T>
 inline void Serializer<TTag>::deserializeImpl(Ref<DeserializerStream> r_stream, Ref<T> r_output)
 {
-    T::deserialize(r_stream, r_output, TTag());
+    if constexpr (concepts::TriviallyDeserializable<T>) {
+        r_stream.read(reinterpret_cast<char*>(std::addressof(r_output)), sizeof(T));
+    } else if constexpr (concepts::NonTriviallyDeserializable<T>) {
+        T::deserialize(r_stream, r_output, TTag());
+    }
 }
 
 

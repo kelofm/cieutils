@@ -97,7 +97,6 @@ if ! cmake                                                  \
     "-D${projectNameUpper}_BUILD_SHARED_LIBRARY:BOOL=ON"    \
     "-D${projectNameUpper}_BUILD_PYTHON_MODULE:BOOL=ON"     \
     "-D${projectNameUpper}_BUILD_TESTS:BOOL=ON"             \
-    "-D${projectNameUpper}_ENABLE_MPI:BOOL=OFF"             \
     "$cCacheFlag"                                           \
     $(echo $cmakeArguments | tr '\;' '\n')                  \
     ; then

@@ -36,10 +36,7 @@ public:
                           Ptr<const T> begin,
                           Size numberOfItems);
 
-    template <concepts::TriviallyDeserializable T>
-    static void deserialize(Ref<DeserializerStream> r_stream, Ref<T> r_output);
-
-    template <concepts::NonTriviallyDeserializable T>
+    template <concepts::Deserializable T>
     static void deserialize(Ref<DeserializerStream> r_stream, Ref<T> r_output);
 
     template <concepts::Deserializable<TTag> T>
@@ -54,10 +51,7 @@ private:
     template <concepts::NonTriviallySerializable T>
     static void serializeImpl(Ref<SerializerStream> r_stream, Ref<const T> r_object);
 
-    template <concepts::TriviallyDeserializable T>
-    static void deserializeImpl(Ref<DeserializerStream> r_stream, Ref<T> r_output);
-
-    template <concepts::NonTriviallyDeserializable T>
+    template <concepts::Deserializable T>
     static void deserializeImpl(Ref<DeserializerStream> r_stream, Ref<T> r_output);
 }; // class Serializer
 

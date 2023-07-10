@@ -75,16 +75,16 @@ concept Serializable
 
 template <class T>
 concept NonTriviallySerializable
-= Serializable<T> && (!TriviallySerializable<T>);
+= !TriviallySerializable<T> && Serializable<T>;
 
 
 /** @brief Concept for trivially deserializable types.
- *  @details Trivial serialization means different thins depending
- *           on the type of serialization. For binary serialization,
- *           it means that the serialized output is identical to the
- *           unserialized binary representation. For text serialization,
- *           it means that the object can be directly serialized to an
- *           std::ostream and deserialized from an std::istream via
+ *  @details Trivial deserialization means different things depending
+ *           on the type of deserialization. For binary deserialization,
+ *           it means that the deserialized output is identical to the
+ *           serialized binary representation. For text serialization,
+ *           it means that the object can be directly deserialized from an
+ *           std::ostream and serialized to an std::istream via
  *           operator<< and operator>> respectively.
  *  @note Trivial deserialization implies trivial serialization as well.
  */
@@ -120,7 +120,7 @@ concept Deserializable
 
 template <class T>
 concept NonTriviallyDeserializable
-= Deserializable<T> && (!TriviallyDeserializable<T>);
+= !TriviallyDeserializable<T> && Deserializable<T>;
 
 
 } // namespace cie::concepts
