@@ -31,7 +31,7 @@ jobs:
       - name: Install packages
         run: sudo apt install libopenmpi-dev && sudo xargs apt install < dependencies_ubuntu.txt
       - name: Build
-        run: ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER=ON" -o "-DCIEUTILS_ENABLE_MPI"
+        run: ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER=ON" -o "-DCIEUTILS_ENABLE_MPI=ON"
       - name: Run tests
         run: ./build/bin/cieutils_testrunner
 
