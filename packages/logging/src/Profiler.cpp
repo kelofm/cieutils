@@ -184,7 +184,7 @@ Profiler<T>::~Profiler()
     {
         io::JSONObject object;
         object.add("name", "total");
-        object.add("timeUnit", (std::stringstream() << T(0)).str().substr(1));
+        object.add("timeUnit", getTimeUnit<T>());
         object.add("time", totalTime.count());
 
         object.add("mpi", isMPIEnabled());
