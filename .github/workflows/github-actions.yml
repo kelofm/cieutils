@@ -20,6 +20,7 @@ concurrency:
 jobs:
   testrunner:
     strategy:
+      fail-fast: false
       matrix:
         sanitizer: [ADDRESS, THREAD, UB]
     runs-on: ubuntu-latest
@@ -31,7 +32,9 @@ jobs:
       - name: Install packages
         run: sudo apt install libopenmpi-dev catch2 && sudo xargs apt install < dependencies_ubuntu.txt
       - name: Build
-        run: ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER=ON" -o "-DCIEUTILS_ENABLE_MPI=ON"
+        # OpenMPI is leaking all over the place (according to ASAN), so disable it for now
+        #run: ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER=ON" -o "-DCIEUTILS_ENABLE_MPI=ON"
+        run: ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER=ON" -o
       - name: Run tests
         run: ./build/bin/cieutils_testrunner
 
