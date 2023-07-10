@@ -24,7 +24,7 @@ TException exceptionFactory(TException& r_exception, const String& r_location, c
 
 
 template <concepts::STLException TException>
-TException exceptionFactory(TException& r_exception, const String& r_location, const String& r_additionalMessage) noexcept
+TException exceptionFactory(TException& r_exception, const String&, const String& r_additionalMessage) noexcept
 {
     std::stringstream stream;
     stream << r_exception.what() << std::endl << r_additionalMessage;
