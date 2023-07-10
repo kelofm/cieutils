@@ -33,7 +33,7 @@ concept STLException
 namespace cie {
 
 
-struct Exception : public std::exception
+class Exception : public std::exception
 {
 public:
     Exception() = delete;
