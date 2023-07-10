@@ -19,6 +19,34 @@
 namespace cie::utils {
 
 
+namespace {
+template <class TTimeUnit>
+std::string getTimeUnit()
+{
+    CIE_THROW(Exception, "Unknown time unit")
+}
+
+template <>
+std::string getTimeUnit<std::chrono::milliseconds>()
+{
+    return "ms";
+}
+
+template <>
+std::string getTimeUnit<std::chrono::microseconds>()
+{
+    return "us";
+}
+
+template <>
+
+std::string getTimeUnit<std::chrono::nanoseconds>()
+{
+    return "ns";
+}
+} // unnamed namespace
+
+
 template <class T>
 Profiler<T>::Item::Item(std::source_location&& r_location)
     : _recursionLevel(0),
@@ -43,8 +71,7 @@ Profiler<T>::Profiler()
     : Profiler([]() -> std::filesystem::path {
         // Get the time unit string
         utils::FileManager manager;
-        const auto unit = (std::stringstream() << T(0)).str().substr(1);
-        auto path = manager.getCurrentDirectory() / ("cie_profiler_output_" + unit + ".json");
+        auto path = manager.getCurrentDirectory() / ("cie_profiler_output_" + getTimeUnit<T>() + ".json");
 
         // Get a unique output file for this thread and rank
         manager.makeConcurrentPrivate(path);
