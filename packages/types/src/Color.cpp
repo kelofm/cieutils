@@ -237,7 +237,7 @@ const RGBAColor RGBAColor::Black(0x0, 0x0, 0x0);
 const RGBAColor RGBAColor::TUMBlack(51, 51, 51);
 
 
-const RGBAColor RGBAColor::TUMBlue(0, 82, 147);
+const RGBAColor RGBAColor::TUMBlue(0, 82, 147); // #005293
 
 
 const RGBAColor RGBAColor::TUMWebBlue(48, 112, 179);
@@ -252,10 +252,10 @@ const RGBAColor RGBAColor::TUMLighterBlue(100, 160, 200);
 const RGBAColor RGBAColor::TUMLightestBlue(152, 198, 234);
 
 
-const RGBAColor RGBAColor::TUMOrange(227, 114, 34);
+const RGBAColor RGBAColor::TUMOrange(227, 114, 34); // #e07222
 
 
-const RGBAColor RGBAColor::TUMGreen(162, 173, 0);
+const RGBAColor RGBAColor::TUMGreen(162, 173, 0); // #a1ad00
 
 
 const RGBAColor RGBAColor::TUMLightGray(218, 215, 203);
