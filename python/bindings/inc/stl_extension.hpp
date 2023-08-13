@@ -38,7 +38,7 @@ StaticArray<Size,Dimension> makeContiguousStrides(Ptr<const Size> p_shapeBegin)
     const auto shape = std::span(p_shapeBegin, p_shapeBegin + Dimension);
     std::exclusive_scan(shape.rbegin(),
                         shape.rend(),
-                        strides.begin(),
+                        strides.rbegin(),
                         sizeof(TValue),
                         std::multiplies<Size>());
     return strides;

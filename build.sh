@@ -136,6 +136,7 @@ if ! cmake --build "$buildDir" --target install -j; then
     exit $?
 fi
 
+# Package
 if [ $package -eq 1 ]; then
     cd "$buildDir"
     if [ "$generator" = "Ninja" ]; then
