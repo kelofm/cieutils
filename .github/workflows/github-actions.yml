@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        sanitizer: [ADDRESS, THREAD, UB]
+        sanitizer: [address, thread, undefined]
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
@@ -33,8 +33,8 @@ jobs:
         run: sudo apt install libopenmpi-dev catch2 && sudo xargs apt install < dependencies_ubuntu.txt
       - name: Build
         # OpenMPI is leaking all over the place (according to ASAN), so disable it for now
-        #run: ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER=ON" -o "-DCIEUTILS_ENABLE_MPI=ON"
-        run: ./build.sh -t Debug -o "-DCIEUTILS_ENABLE_${{ matrix.sanitizer }}_SANITIZER=ON"
+        #run: ./build.sh -t Debug -o "-DCMAKE_CXX_FLAGS=-fsanitize=${{ matrix.sanitizer }}" -o "-DCIEUTILS_ENABLE_MPI=ON"
+        run: ./build.sh -t Debug -o "-DCMAKE_CXX_FLAGS=-fsanitize=${{ matrix.sanitizer }}"
       - name: Run tests
         run: ./build/bin/cieutils_testrunner
 
