@@ -13,6 +13,7 @@
 
 // --- STL Includes ---
 #include <ranges>
+#include <span>
 
 
 template <class T, class TAllocator>
