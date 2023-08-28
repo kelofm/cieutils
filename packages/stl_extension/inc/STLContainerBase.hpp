@@ -96,95 +96,99 @@ public:
     ///@name Common members
     ///@{
 
-    size_type size() const
+    size_type size() const noexcept
     {return TBase::size();}
 
-    bool empty() const
+    bool empty() const noexcept
     {return TBase::empty();}
 
-    iterator begin()
+    iterator begin() noexcept
     {return TBase::begin();}
 
-    const_iterator begin() const
+    const_iterator begin() const noexcept
     {return TBase::begin();}
 
-    const_iterator cbegin() const
+    const_iterator cbegin() const noexcept
     {return TBase::cbegin();}
 
-    reverse_iterator rbegin()
+    reverse_iterator rbegin() noexcept
     {return TBase::rbegin();}
 
-    const_reverse_iterator rbegin() const
+    const_reverse_iterator rbegin() const noexcept
     {return TBase::rbegin();}
 
-    const_reverse_iterator crbegin() const
+    const_reverse_iterator crbegin() const noexcept
     {return TBase::crbegin();}
 
-    iterator end()
+    iterator end() noexcept
     {return TBase::end();}
 
-    const_iterator end() const
+    const_iterator end() const noexcept
     {return TBase::end();}
 
-    const_iterator cend() const
+    const_iterator cend() const noexcept
     {return TBase::cend();}
 
-    reverse_iterator rend()
+    reverse_iterator rend() noexcept
     {return TBase::rend();}
 
-    const_reverse_iterator rend() const
+    const_reverse_iterator rend() const noexcept
     {return TBase::rend();}
 
-    const_reverse_iterator crend() const
+    const_reverse_iterator crend() const noexcept
     {return TBase::crend();}
 
     ///@}
     ///@name Optional members
     ///@{
 
-    reference at(size_type index)
+    reference at(size_type index) noexcept
     requires concepts::detail::HasAt<TBase, size_type, reference>
     {return TBase::at(index);}
 
-    const_reference at(size_type index) const
+    const_reference at(size_type index) const noexcept
     requires concepts::detail::HasAt<const TBase, size_type, const_reference>
     {return TBase::at(index);}
 
-    reference operator[](size_type index)
+    reference operator[](size_type index) noexcept
     requires concepts::detail::HasAccessOperator<TBase, size_type, reference>
     {return TBase::operator[](index);}
 
-    const_reference operator[](size_type index) const
+    const_reference operator[](size_type index) const noexcept
     requires concepts::detail::HasAccessOperator<const TBase, size_type, const_reference>
     {return TBase::operator[](index);}
 
-    pointer data()
+    pointer data() noexcept
     requires concepts::detail::HasData<TBase>
     {return TBase::data();}
 
-    const_pointer data() const
+    const_pointer data() const noexcept
     requires concepts::detail::HasData<TBase>
     {return TBase::data();}
 
-    reference front()
+    reference front() noexcept
     requires concepts::detail::HasFront<TBase, reference>
     {return TBase::front();}
 
-    const_reference front() const
+    const_reference front() const noexcept
     requires concepts::detail::HasFront<const TBase, const_reference>
     {return TBase::front();}
 
-    reference back()
+    reference back() noexcept
     requires concepts::detail::HasBack<TBase, reference>
     {return TBase::back();}
 
-    const_reference back() const
+    const_reference back() const noexcept
     requires concepts::detail::HasBack<const TBase, const_reference>
     {return TBase::back();}
 
     void reserve(size_type capacity)
     requires concepts::detail::HasReserve<TBase>
     {TBase::reserve(capacity);}
+
+    auto capacity() const noexcept
+    requires concepts::detail::HasReserve<TBase>
+    {return TBase::capacity();}
 
     void clear()
     requires concepts::detail::HasClear<TBase>
