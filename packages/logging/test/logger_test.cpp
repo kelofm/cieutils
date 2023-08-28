@@ -28,7 +28,7 @@ CIE_TEST_CASE( "Logger", "[logger]" )
         CIE_TEST_CHECK_NOTHROW( logger.log( "test5" ) );
         CIE_TEST_CHECK_NOTHROW( logger.decreaseIndent() );
         CIE_TEST_CHECK_NOTHROW( logger.log( "test6" ) );
-        size_t timerID;
+        size_t timerID = 0;
         CIE_TEST_CHECK_NOTHROW( timerID = logger.startTimer() );
         CIE_TEST_CHECK_NOTHROW( logger.noIndent() );
         CIE_TEST_CHECK_NOTHROW( logger.logElapsed( "test7", timerID ) );
