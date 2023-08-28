@@ -2,7 +2,6 @@
 #define CIE_UTILS_COMPILE_TIME_SEQUENCE_HPP
 
 // --- STL Includes ---
-#include <bits/utility.h>
 #include <utility>
 
 
