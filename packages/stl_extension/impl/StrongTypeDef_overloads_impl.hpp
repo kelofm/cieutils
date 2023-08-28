@@ -1,6 +1,10 @@
 #ifndef CIE_UTILS_STRONG_TYPEDEF_OVERLOADS_IMPL_HPP
 #define CIE_UTILS_STRONG_TYPEDEF_OVERLOADS_IMPL_HPP
 
+// --- Utility Includes ---
+#include "packages/stl_extension/inc/StrongTypeDef_overloads.hpp"
+
+
 namespace cie::utils {
 
 
@@ -9,7 +13,7 @@ namespace cie::utils {
 template <class T, class Tag>
 inline bool
 operator==(const StrongTypeDef<T,Tag>& r_lhs,
-           const StrongTypeDef<T,Tag>& r_rhs)
+           const StrongTypeDef<T,Tag>& r_rhs) noexcept
 {
     return static_cast<const T&>(r_lhs) == static_cast<const T&>(r_rhs);
 }
@@ -17,7 +21,7 @@ operator==(const StrongTypeDef<T,Tag>& r_lhs,
 template <class T, class Tag>
 inline bool
 operator==(const StrongTypeDef<T,Tag>& r_lhs,
-           const T& r_rhs)
+           const T& r_rhs) noexcept
 {
     return static_cast<const T&>(r_lhs) == r_rhs;
 }
@@ -25,7 +29,7 @@ operator==(const StrongTypeDef<T,Tag>& r_lhs,
 template <class T, class Tag>
 inline bool
 operator==(const T& r_lhs,
-           const StrongTypeDef<T,Tag>& r_rhs)
+           const StrongTypeDef<T,Tag>& r_rhs) noexcept
 {
     return r_lhs == static_cast<const T&>(r_rhs);
 }
@@ -34,7 +38,7 @@ operator==(const T& r_lhs,
 template <class T, class Tag>
 inline bool
 operator!=(const StrongTypeDef<T,Tag>& r_lhs,
-           const StrongTypeDef<T,Tag>& r_rhs)
+           const StrongTypeDef<T,Tag>& r_rhs) noexcept
 {
     return static_cast<const T&>(r_lhs) != static_cast<const T&>(r_rhs);
 }
@@ -42,7 +46,7 @@ operator!=(const StrongTypeDef<T,Tag>& r_lhs,
 template <class T, class Tag>
 inline bool
 operator!=(const StrongTypeDef<T,Tag>& r_lhs,
-           const T& r_rhs)
+           const T& r_rhs) noexcept
 {
     return static_cast<const T&>(r_lhs) != r_rhs;
 }
@@ -50,7 +54,7 @@ operator!=(const StrongTypeDef<T,Tag>& r_lhs,
 template <class T, class Tag>
 inline bool
 operator!=(const T& r_lhs,
-           const StrongTypeDef<T,Tag>& r_rhs)
+           const StrongTypeDef<T,Tag>& r_rhs) noexcept
 {
     return r_lhs == static_cast<const T&>(r_rhs);
 }
@@ -59,7 +63,7 @@ operator!=(const T& r_lhs,
 template <class T, class Tag>
 inline bool
 operator<(const StrongTypeDef<T,Tag>& r_lhs,
-          const StrongTypeDef<T,Tag>& r_rhs)
+          const StrongTypeDef<T,Tag>& r_rhs) noexcept
 {
     return static_cast<const T&>(r_lhs) < static_cast<const T&>(r_rhs);
 }
@@ -67,7 +71,7 @@ operator<(const StrongTypeDef<T,Tag>& r_lhs,
 template <class T,class Tag>
 inline bool
 operator<(const StrongTypeDef<T,Tag>& r_lhs,
-          const T& r_rhs)
+          const T& r_rhs) noexcept
 {
     return static_cast<const T&>(r_lhs) < r_rhs;
 }
@@ -75,7 +79,7 @@ operator<(const StrongTypeDef<T,Tag>& r_lhs,
 template <class T, class Tag>
 inline bool
 operator<(const T& r_lhs,
-          const StrongTypeDef<T,Tag>& r_rhs)
+          const StrongTypeDef<T,Tag>& r_rhs) noexcept
 {
     return r_lhs < static_cast<const T&>(r_rhs);
 }
@@ -83,7 +87,7 @@ operator<(const T& r_lhs,
 template <class T, class Tag>
 inline bool
 operator>(const StrongTypeDef<T,Tag>& r_lhs,
-          const StrongTypeDef<T,Tag>& r_rhs)
+          const StrongTypeDef<T,Tag>& r_rhs) noexcept
 {
     return static_cast<const T&>(r_lhs) > static_cast<const T&>(r_rhs);
 }
@@ -91,7 +95,7 @@ operator>(const StrongTypeDef<T,Tag>& r_lhs,
 template <class T,class Tag>
 inline bool
 operator>(const StrongTypeDef<T,Tag>& r_lhs,
-          const T& r_rhs)
+          const T& r_rhs) noexcept
 {
     return static_cast<const T&>(r_lhs) > r_rhs;
 }
@@ -99,7 +103,7 @@ operator>(const StrongTypeDef<T,Tag>& r_lhs,
 template <class T, class Tag>
 inline bool
 operator>(const T& r_lhs,
-          const StrongTypeDef<T,Tag>& r_rhs)
+          const StrongTypeDef<T,Tag>& r_rhs) noexcept
 {
     return r_lhs > static_cast<const T&>(r_rhs);
 }
@@ -108,7 +112,7 @@ operator>(const T& r_lhs,
 template <class T, class Tag>
 inline bool
 operator<=(const StrongTypeDef<T,Tag>& r_lhs,
-           const StrongTypeDef<T,Tag>& r_rhs)
+           const StrongTypeDef<T,Tag>& r_rhs) noexcept
 {
     return static_cast<const T&>(r_lhs) <= static_cast<const T&>(r_rhs);
 }
@@ -116,7 +120,7 @@ operator<=(const StrongTypeDef<T,Tag>& r_lhs,
 template <class T,class Tag>
 inline bool
 operator<=(const StrongTypeDef<T,Tag>& r_lhs,
-           const T& r_rhs)
+           const T& r_rhs) noexcept
 {
     return static_cast<const T&>(r_lhs) <= r_rhs;
 }
@@ -124,7 +128,7 @@ operator<=(const StrongTypeDef<T,Tag>& r_lhs,
 template <class T, class Tag>
 inline bool
 operator<=(const T& r_lhs,
-           const StrongTypeDef<T,Tag>& r_rhs)
+           const StrongTypeDef<T,Tag>& r_rhs) noexcept
 {
     return r_lhs <= static_cast<const T&>(r_rhs);
 }
@@ -132,7 +136,7 @@ operator<=(const T& r_lhs,
 template <class T, class Tag>
 inline bool
 operator>=(const StrongTypeDef<T,Tag>& r_lhs,
-           const StrongTypeDef<T,Tag>& r_rhs)
+           const StrongTypeDef<T,Tag>& r_rhs) noexcept
 {
     return static_cast<const T&>(r_lhs) >= static_cast<const T&>(r_rhs);
 }
@@ -140,7 +144,7 @@ operator>=(const StrongTypeDef<T,Tag>& r_lhs,
 template <class T,class Tag>
 inline bool
 operator>=(const StrongTypeDef<T,Tag>& r_lhs,
-           const T& r_rhs)
+           const T& r_rhs) noexcept
 {
     return static_cast<const T&>(r_lhs) >= r_rhs;
 }
@@ -148,7 +152,7 @@ operator>=(const StrongTypeDef<T,Tag>& r_lhs,
 template <class T, class Tag>
 inline bool
 operator>=(const T& r_lhs,
-           const StrongTypeDef<T,Tag>& r_rhs)
+           const StrongTypeDef<T,Tag>& r_rhs) noexcept
 {
     return r_lhs >= static_cast<const T&>(r_rhs);
 }

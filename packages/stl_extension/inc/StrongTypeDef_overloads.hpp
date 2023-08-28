@@ -12,88 +12,88 @@ namespace cie::utils {
 
 template <class T, class Tag>
 bool operator==(const StrongTypeDef<T,Tag>& r_lhs,
-                const StrongTypeDef<T,Tag>& r_rhs);
+                const StrongTypeDef<T,Tag>& r_rhs) noexcept;
 
 template <class T, class Tag>
 bool operator==(const StrongTypeDef<T,Tag>& r_lhs,
-                const T& r_rhs);
+                const T& r_rhs) noexcept;
 
 template <class T, class Tag>
 bool operator==(const T& r_lhs,
-                const StrongTypeDef<T,Tag>& r_rhs);
+                const StrongTypeDef<T,Tag>& r_rhs) noexcept;
 
 
 template <class T, class Tag>
 bool operator!=(const StrongTypeDef<T,Tag>& r_lhs,
-                const StrongTypeDef<T,Tag>& r_rhs);
+                const StrongTypeDef<T,Tag>& r_rhs) noexcept;
 
 template <class T, class Tag>
 bool operator!=(const StrongTypeDef<T,Tag>& r_lhs,
-                const T& r_rhs);
+                const T& r_rhs) noexcept;
 
 template <class T, class Tag>
 bool operator!=(const T& r_lhs,
-                const StrongTypeDef<T,Tag>& r_rhs);
+                const StrongTypeDef<T,Tag>& r_rhs) noexcept;
 
 
 template <class T, class Tag>
 bool operator<(const StrongTypeDef<T,Tag>& r_lhs,
-               const StrongTypeDef<T,Tag>& r_rhs);
+               const StrongTypeDef<T,Tag>& r_rhs) noexcept;
 
 template <class T,class Tag>
 bool operator<(const StrongTypeDef<T,Tag>& r_lhs,
-               const T& r_rhs);
+               const T& r_rhs) noexcept;
 
 template <class T, class Tag>
 bool operator<(const T& r_lhs,
-               const StrongTypeDef<T,Tag>& r_rhs);
+               const StrongTypeDef<T,Tag>& r_rhs) noexcept;
 
 template <class T, class Tag>
 bool operator>(const StrongTypeDef<T,Tag>& r_lhs,
-               const StrongTypeDef<T,Tag>& r_rhs);
+               const StrongTypeDef<T,Tag>& r_rhs) noexcept;
 
 template <class T,class Tag>
 bool operator>(const StrongTypeDef<T,Tag>& r_lhs,
-               const T& r_rhs);
+               const T& r_rhs) noexcept;
 
 template <class T, class Tag>
 bool operator>(const T& r_lhs,
-               const StrongTypeDef<T,Tag>& r_rhs);
+               const StrongTypeDef<T,Tag>& r_rhs) noexcept;
 
 
 template <class T, class Tag>
 bool operator<=(const StrongTypeDef<T,Tag>& r_lhs,
-                const StrongTypeDef<T,Tag>& r_rhs);
+                const StrongTypeDef<T,Tag>& r_rhs) noexcept;
 
 template <class T,class Tag>
 bool operator<=(const StrongTypeDef<T,Tag>& r_lhs,
-                const T& r_rhs);
+                const T& r_rhs) noexcept;
 
 template <class T, class Tag>
 bool operator<=(const T& r_lhs,
-                const StrongTypeDef<T,Tag>& r_rhs);
+                const StrongTypeDef<T,Tag>& r_rhs) noexcept;
 
 template <class T, class Tag>
 bool operator>=(const StrongTypeDef<T,Tag>& r_lhs,
-                const StrongTypeDef<T,Tag>& r_rhs);
+                const StrongTypeDef<T,Tag>& r_rhs) noexcept;
 
 template <class T,class Tag>
 bool operator>=(const StrongTypeDef<T,Tag>& r_lhs,
-                const T& r_rhs);
+                const T& r_rhs) noexcept;
 
 template <class T, class Tag>
 bool operator>=(const T& r_lhs,
-                const StrongTypeDef<T,Tag>& r_rhs);
+                const StrongTypeDef<T,Tag>& r_rhs) noexcept;
 
 
 /* --- ARITHMETIC OPERATORS --- */
 
-// TODO
+/// @todo implement arithmetic operators for @ref StrongTypeDef
 
 
 /* --- STREAM OPERATORS --- */
 
-// TODO
+/// @todo implement stream operators for @ref StrongTypeDef
 
 
 } // namespace cie::utils

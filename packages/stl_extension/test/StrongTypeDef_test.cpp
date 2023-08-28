@@ -19,24 +19,24 @@ using VectorBase    = DynamicArray<int>;
 using IntBase       = int;
 using PtrBase   = int*;
 
-CIE_STRONG_TYPEDEF(STDVectorBase, SubSTDVector1)
-CIE_STRONG_TYPEDEF(STDVectorBase, SubSTDVector2)
+CIE_STRONG_TYPEDEF(STDVectorBase, SubSTDVector1);
+CIE_STRONG_TYPEDEF(STDVectorBase, SubSTDVector2);
 
-CIE_STRONG_TYPEDEF( VectorBase, SubVector1 )
-CIE_STRONG_TYPEDEF( VectorBase, SubVector2 )
+CIE_STRONG_TYPEDEF( VectorBase, SubVector1 );
+CIE_STRONG_TYPEDEF( VectorBase, SubVector2 );
 
-CIE_STRONG_TYPEDEF( IntBase, SubInt1 )
-CIE_STRONG_TYPEDEF( IntBase, SubInt2 )
+CIE_STRONG_TYPEDEF( IntBase, SubInt1 );
+CIE_STRONG_TYPEDEF( IntBase, SubInt2 );
 
-CIE_STRONG_TYPEDEF( PtrBase, SubPtr1 )
-CIE_STRONG_TYPEDEF( PtrBase, SubPtr2 )
+CIE_STRONG_TYPEDEF( PtrBase, SubPtr1 );
+CIE_STRONG_TYPEDEF( PtrBase, SubPtr2 );
 
 struct TestClass
 {
-    CIE_STRONG_TYPEDEF( VectorBase, MemberVector )
-    CIE_STRONG_TYPEDEF( IntBase, MemberInt )
-    CIE_STRONG_TYPEDEF( PtrBase, MemberPtr )
-    CIE_STRONG_TYPEDEF(STDVectorBase,MemberSTDVector)
+    CIE_STRONG_TYPEDEF( VectorBase, MemberVector );
+    CIE_STRONG_TYPEDEF( IntBase, MemberInt );
+    CIE_STRONG_TYPEDEF( PtrBase, MemberPtr );
+    CIE_STRONG_TYPEDEF(STDVectorBase,MemberSTDVector);
 };
 
 int testFunction(VectorBase)                {return 0;}
