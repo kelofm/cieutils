@@ -181,6 +181,31 @@ public:
 }; // class MatchTuple
 
 
+
+template <class TSet, class TExcept>
+class Filter {};
+
+
+
+template <class ...TSet, class ...TExcept>
+class Filter<std::tuple<TSet...>,std::tuple<TExcept...>>
+{
+private:
+    using SetTypes = std::tuple<TSet...>;
+
+    using ExceptTypes = std::tuple<TExcept...>;
+
+public:
+    using Type = decltype(std::tuple_cat(
+        std::declval<std::conditional_t<
+            Match<TSet>::template Any<TExcept...>,
+            std::tuple<>,
+            std::tuple<TSet>
+        >>()...
+    ));
+}; // class Filter
+
+
 ///@}
 
 
