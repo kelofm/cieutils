@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classmodules_1_1benchutils_1_1Parser_1_1CIEProfilerParser.html" title=" " alt="" coords="5,39,201,80"/>
+<area shape="rect" id="node2" href="$classmodules_1_1benchutils_1_1Parser_1_1Parser.html" title=" " alt="" coords="249,39,445,80"/>
+<area shape="rect" id="node3" href="$classmodules_1_1benchutils_1_1Parser_1_1GoogleTextParser.html" title="Parses google benchmark text output and packs them into a single Result object." alt="" coords="493,5,689,47"/>
+<area shape="rect" id="node4" href="$classmodules_1_1benchutils_1_1Parser_1_1InternalJSONParser.html" title="Parses a stream generated from serializing a list of Result objects." alt="" coords="493,71,689,112"/>
+<area shape="rect" id="node5" href="$classmetaclass.html" title=" " alt="" coords="59,105,148,131"/>
+</map>
