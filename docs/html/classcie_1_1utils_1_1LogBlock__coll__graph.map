@@ -1,0 +1,19 @@
+<map id="cie::utils::LogBlock" name="cie::utils::LogBlock">
+<area shape="rect" id="Node000001" title=" " alt="" coords="328,876,464,1061"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,155,56,221"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="37,220,55,325,90,477,116,562,148,649,187,733,233,812,272,861,317,904,313,908,268,864,228,815,182,735,143,651,111,564,85,479,49,326,32,221"/>
+<area shape="rect" id="Node000004" href="$classcie_1_1utils_1_1Logger.html" title=" " alt="" coords="303,448,489,813"/>
+<area shape="poly" id="edge8_Node000004_Node000002" title=" " alt="" coords="32,221,33,254,39,293,50,333,70,369,80,378,91,382,117,392,209,459,292,529,289,533,206,463,115,397,89,387,77,383,66,372,45,335,33,295,28,255,27,221"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="513,598,565,663"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="538,664,527,734,504,814,475,869,471,867,499,812,522,733,533,663"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="399,813,399,859,393,859,393,813"/>
+<area shape="rect" id="Node000005" href="$classcie_1_1OutputStream.html" title=" " alt="" coords="80,5,288,371"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="280,382,311,447,306,449,275,385"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="290,149,308,164,315,188,312,204,304,217,300,214,307,203,309,188,303,166,287,153"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="377,148,537,228"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="455,229,426,432,421,431,449,228"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="561,155,724,221"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="630,222,552,372,504,449,499,457,495,454,499,447,547,369,625,220"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="748,155,791,221"/>
+<area shape="poly" id="edge9_Node000004_Node000008" title=" " alt="" coords="775,221,774,255,770,295,759,335,738,372,711,398,684,410,617,427,586,433,559,434,534,438,503,451,501,446,532,433,559,429,585,428,615,421,682,405,708,394,734,369,754,333,765,294,769,255,769,221"/>
+</map>

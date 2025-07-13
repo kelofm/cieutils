@@ -1,0 +1,11 @@
+<map id="metaclass" name="metaclass">
+<area shape="rect" id="Node000001" title=" " alt="" coords="271,5,352,71"/>
+<area shape="rect" id="Node000002" href="$classmodules_1_1benchutils_1_1Parser_1_1Parser.html" title=" " alt="" coords="217,119,405,219"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="314,84,314,119,309,119,309,84"/>
+<area shape="rect" id="Node000003" href="$classmodules_1_1benchutils_1_1Parser_1_1CIEProfilerParser.html" title=" " alt="" coords="5,277,193,377"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="236,229,168,279,164,274,232,224"/>
+<area shape="rect" id="Node000004" href="$classmodules_1_1benchutils_1_1Parser_1_1GoogleTextParser.html" title="Parses google benchmark text output and packs them into a single Result object." alt="" coords="217,267,405,387"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="314,232,314,266,309,266,309,232"/>
+<area shape="rect" id="Node000005" href="$classmodules_1_1benchutils_1_1Parser_1_1InternalJSONParser.html" title="Parses a stream generated from serializing a list of Result objects." alt="" coords="429,277,617,377"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="390,224,458,274,455,279,387,229"/>
+</map>

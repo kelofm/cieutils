@@ -1,0 +1,17 @@
+<map id="Logger.hpp" name="Logger.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="98,5,191,31"/>
+<area shape="rect" id="Node000002" href="$LogBlock_8hpp.html" title=" " alt="" coords="90,79,199,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,44,147,79,142,79,142,44"/>
+<area shape="rect" id="Node000003" href="$Loggee_8hpp.html" title=" " alt="" coords="5,152,103,177"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="118,41,97,59,80,80,65,118,58,152,53,151,59,117,76,77,94,55,114,37"/>
+<area shape="rect" id="Node000006" href="$LoggerSingleton_8hpp.html" title=" " alt="" coords="223,79,378,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="183,34,276,76,274,81,181,39"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="121,115,70,154,67,150,118,110"/>
+<area shape="rect" id="Node000004" href="$testing_8hpp.html" title=" " alt="" coords="129,152,224,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="158,116,174,151,169,153,153,118"/>
+<area shape="rect" id="Node000005" href="$essentials_8hpp.html" title=" " alt="" coords="119,225,235,251"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="179,191,179,225,174,225,174,191"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="270,113,198,154,196,149,268,108"/>
+<area shape="rect" id="Node000007" href="$warning_8hpp.html" title=" " alt="" coords="249,152,352,177"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="303,118,303,152,298,152,298,118"/>
+</map>

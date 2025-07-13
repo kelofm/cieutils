@@ -1,0 +1,7 @@
+<map id="cie::tags::Text" name="cie::tags::Text">
+<area shape="rect" id="Node000001" title="Tag to indicate text representation." alt="" coords="5,277,153,343"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="18,148,141,228"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,242,82,277,77,277,77,242"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="18,5,141,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,99,82,148,77,148,77,99"/>
+</map>

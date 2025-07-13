@@ -1,0 +1,9 @@
+<map id="modules.benchutils.Parser.GoogleTextParser" name="modules.benchutils.Parser.GoogleTextParser">
+<area shape="rect" id="Node000001" title="Parses google benchmark text output and packs them into a single Result object." alt="" coords="11,267,199,387"/>
+<area shape="rect" id="Node000002" href="$classmodules_1_1benchutils_1_1Parser_1_1Parser.html" title=" " alt="" coords="11,119,199,219"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,232,107,266,102,266,102,232"/>
+<area shape="rect" id="Node000003" href="$classmetaclass.html" title=" " alt="" coords="5,5,87,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="69,82,85,118,80,120,64,84"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="111,5,216,71"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="146,84,129,120,125,118,141,82"/>
+</map>

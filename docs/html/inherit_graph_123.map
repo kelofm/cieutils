@@ -1,0 +1,19 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,153,120,179"/>
+<area shape="rect" id="Node000001" href="$classcie_1_1Exception.html" title=" " alt="" coords="168,153,281,179"/>
+<area shape="poly" id="edge27_Node000000_Node000001" title=" " alt="" coords="134,163,168,163,168,169,134,169"/>
+<area shape="rect" id="Node000002" href="$structcie_1_1AbstractCallException.html" title=" " alt="" coords="345,5,537,31"/>
+<area shape="poly" id="edge28_Node000001_Node000002" title=" " alt="" coords="237,140,274,88,299,62,328,40,353,28,355,33,331,44,302,66,278,92,242,143"/>
+<area shape="rect" id="Node000003" href="$structcie_1_1DivisionByZeroException.html" title=" " alt="" coords="334,55,547,80"/>
+<area shape="poly" id="edge29_Node000001_Node000003" title=" " alt="" coords="249,141,285,114,328,89,361,78,363,83,330,94,288,118,252,146"/>
+<area shape="rect" id="Node000004" href="$structcie_1_1GeometryException.html" title=" " alt="" coords="351,104,530,129"/>
+<area shape="poly" id="edge30_Node000001_Node000004" title=" " alt="" coords="290,147,329,138,379,127,380,132,330,143,291,153"/>
+<area shape="rect" id="Node000005" href="$structcie_1_1MemoryException.html" title=" " alt="" coords="357,153,524,179"/>
+<area shape="poly" id="edge31_Node000001_Node000005" title=" " alt="" coords="295,163,357,163,357,169,295,169"/>
+<area shape="rect" id="Node000006" href="$structcie_1_1NotImplementedException.html" title=" " alt="" coords="329,203,552,228"/>
+<area shape="poly" id="edge32_Node000001_Node000006" title=" " alt="" coords="294,179,330,187,385,200,383,205,329,193,293,184"/>
+<area shape="rect" id="Node000007" href="$structcie_1_1NullPtrException.html" title=" " alt="" coords="362,252,519,277"/>
+<area shape="poly" id="edge33_Node000001_Node000007" title=" " alt="" coords="252,186,288,213,330,237,367,249,365,254,328,242,285,217,249,190"/>
+<area shape="rect" id="Node000008" href="$structcie_1_1OutOfRangeException.html" title=" " alt="" coords="345,301,537,327"/>
+<area shape="poly" id="edge34_Node000001_Node000008" title=" " alt="" coords="242,189,278,239,303,265,331,286,358,299,356,304,328,291,299,269,274,243,238,192"/>
+</map>

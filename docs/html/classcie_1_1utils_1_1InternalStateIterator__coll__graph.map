@@ -1,0 +1,16 @@
+<map id="cie::utils::InternalStateIterator&lt; TContainer &gt;" name="cie::utils::InternalStateIterator&lt; TContainer &gt;">
+<area shape="rect" id="Node000001" title="Helper class for permutations." alt="" coords="185,656,356,736"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="52,469,263,593"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,603,246,654,241,657,206,606"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,230,109,295"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="58,296,62,366,69,406,82,444,87,454,83,456,78,446,64,407,56,367,53,296"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="96,5,237,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="169,85,161,453,156,453,163,85"/>
+<area shape="rect" id="Node000005" href="$classcie_1_1utils_1_1StateIterator.html" title=" " alt="" coords="238,163,397,363"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="196,84,241,147,236,151,192,87"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="253,375,196,471,192,468,249,373"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="271,13,363,78"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="320,78,320,146,315,146,315,78"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="287,484,481,579"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="354,581,309,644,305,641,349,578"/>
+</map>
